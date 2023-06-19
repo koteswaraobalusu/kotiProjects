@@ -1,0 +1,707 @@
+students table
+----------------
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+----------+
+| id  | name          | phone_number | email                       | qualification | percentage | address          | course   |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+----------+
+| 101 | koteswara rao |   9347207016 | koteswararao83316@gmail.com | degree        |         77 | ongole           | python   |
+| 102 | rajanna       |   9347207058 | raju83316@gmail.com         | degree        |         70 | kurnool          | aws      |
+| 103 | bhanu         |   9347207890 | bhanu83316@gmail.com        | btech         |         90 | vijayawada       | java     |
+| 104 | charan        |   9658741236 | maruthi@gmail.com           | mca           |         65 | hyderabad        | .net     |
+| 105 | siva          |  96564741236 | siva@gmail.com              | btech         |         68 | kavali           | testing  |
+| 106 | namalu        |   7093683426 | namalu@gmail.com            | btech         |         60 | thimmareddypalem | hardware |
+| 107 | manoj         |   7045683426 | manoj@gmail.com             | mca           |         70 | yarrareddypalem  | devops   |
+| 108 | madhan        |   6305683426 | madhan@gmail.com            | degree        |         75 | vengalapuram     | aws      |
+| 109 | upendra       |   9685683426 | upendra@gmail.com           | degree        |         73 | vishwanadhapuram | java     |
+| 110 | vinay         |   6582483426 | vinay@gmail.com             | btech         |         67 | dharakampadu     | os       |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+----------+
+1.select command:
+-------------------
+* select command is used to retrive the data from table
+* syntax:select*from <table-name>;
+* where * means all
+*  eg:select*from students;
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+----------+
+| id  | name          | phone_number | email                       | qualification | percentage | address          | course   |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+----------+
+| 101 | koteswara rao |   9347207016 | koteswararao83316@gmail.com | degree        |         77 | ongole           | python   |
+| 102 | rajanna       |   9347207058 | raju83316@gmail.com         | degree        |         70 | kurnool          | aws      |
+| 103 | bhanu         |   9347207890 | bhanu83316@gmail.com        | btech         |         90 | vijayawada       | java     |
+| 104 | charan        |   9658741236 | maruthi@gmail.com           | mca           |         65 | hyderabad        | .net     |
+| 105 | siva          |  96564741236 | siva@gmail.com              | btech         |         68 | kavali           | testing  |
+| 106 | namalu        |   7093683426 | namalu@gmail.com            | btech         |         60 | thimmareddypalem | hardware |
+| 107 | manoj         |   7045683426 | manoj@gmail.com             | mca           |         70 | yarrareddypalem  | devops   |
+| 108 | madhan        |   6305683426 | madhan@gmail.com            | degree        |         75 | vengalapuram     | aws      |
+| 109 | upendra       |   9685683426 | upendra@gmail.com           | degree        |         73 | vishwanadhapuram | java     |
+| 110 | vinay         |   6582483426 | vinay@gmail.com             | btech         |         67 | dharakampadu     | os       |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+----------+
+* select is also used for to get some columns data
+* syntax:select <column-name>,<column-name>,........from <table-name>;
+* eg:select id,name from students;
++-----+---------------+
+| id  | name          |
++-----+---------------+
+| 101 | koteswara rao |
+| 102 | rajanna       |
+| 103 | bhanu         |
+| 104 | charan        |
+| 105 | siva          |
+| 106 | namalu        |
+| 107 | manoj         |
+| 108 | madhan        |
+| 109 | upendra       |
+| 110 | vinay         |
++-----+---------------+
+relational operators:
+---------------------
+* =,<,>,<=,>=,and,or,not,in
+* = means equal
+* in are used two or more values
+* and ,or are used for two conditons
+2.where command:
+-----------------
+* where command is used to apply condition on table to get only that data
+* where command is used in only outer query
+* syntax:select*from <table-name> where <condition>;
+* eg:select*from students where qualification='degree';
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+--------+
+| id  | name          | phone_number | email                       | qualification | percentage | address          | course |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+--------+
+| 101 | koteswara rao |   9347207016 | koteswararao83316@gmail.com | degree        |         77 | ongole           | python |
+| 102 | rajanna       |   9347207058 | raju83316@gmail.com         | degree        |         70 | kurnool          | aws    |
+| 108 | madhan        |   6305683426 | madhan@gmail.com            | degree        |         75 | vengalapuram     | aws    |
+| 109 | upendra       |   9685683426 | upendra@gmail.com           | degree        |         73 | vishwanadhapuram | java   |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+--------+
+* to apply two or more conditions on table we use and ,or operator
+* eg:select*from students where qualification='degree' and percentage>73;
++-----+---------------+--------------+-----------------------------+---------------+------------+--------------+--------+
+| id  | name          | phone_number | email                       | qualification | percentage | address      | course |
++-----+---------------+--------------+-----------------------------+---------------+------------+--------------+--------+
+| 101 | koteswara rao |   9347207016 | koteswararao83316@gmail.com | degree        |         77 | ongole       | python |
+| 108 | madhan        |   6305683426 | madhan@gmail.com            | degree        |         75 | vengalapuram | aws    |
++-----+---------------+--------------+-----------------------------+---------------+------------+--------------+--------+
+* eg:select *from students where qualification='degree' or percentage>73;
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+--------+
+| id  | name          | phone_number | email                       | qualification | percentage | address          | course |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+--------+
+| 101 | koteswara rao |   9347207016 | koteswararao83316@gmail.com | degree        |         77 | ongole           | python |
+| 102 | rajanna       |   9347207058 | raju83316@gmail.com         | degree        |         70 | kurnool          | aws    |
+| 103 | bhanu         |   9347207890 | bhanu83316@gmail.com        | btech         |         90 | vijayawada       | java   |
+| 108 | madhan        |   6305683426 | madhan@gmail.com            | degree        |         75 | vengalapuram     | aws    |
+| 109 | upendra       |   9685683426 | upendra@gmail.com           | degree        |         73 | vishwanadhapuram | java   |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+--------+
+* in are used two or more values in condition
+* eg:select*from students where qualification in('degree','mca');
+mysql> select*from students where qualification in('degree','mca');
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+--------+
+| id  | name          | phone_number | email                       | qualification | percentage | address          | course |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+--------+
+| 101 | koteswara rao |   9347207016 | koteswararao83316@gmail.com | degree        |         77 | ongole           | python |
+| 102 | rajanna       |   9347207058 | raju83316@gmail.com         | degree        |         70 | kurnool          | aws    |
+| 104 | charan        |   9658741236 | maruthi@gmail.com           | mca           |         65 | hyderabad        | .net   |
+| 107 | manoj         |   7045683426 | manoj@gmail.com             | mca           |         70 | yarrareddypalem  | devops |
+| 108 | madhan        |   6305683426 | madhan@gmail.com            | degree        |         75 | vengalapuram     | aws    |
+| 109 | upendra       |   9685683426 | upendra@gmail.com           | degree        |         73 | vishwanadhapuram | java   |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+--------+
+3.order by
+-----------
+* order by command is used to get data in alphabetical order or numerical order
+* order by follows only one column remaining columns follows that column
+* syntax:select*from <table-name> order by <column_name> asc|desc;
+* eg:select*from students order by name desc;
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+----------+
+| id  | name          | phone_number | email                       | qualification | percentage | address          | course   |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+----------+
+| 110 | vinay         |   6582483426 | vinay@gmail.com             | btech         |         67 | dharakampadu     | os       |
+| 109 | upendra       |   9685683426 | upendra@gmail.com           | degree        |         73 | vishwanadhapuram | java     |
+| 105 | siva          |  96564741236 | siva@gmail.com              | btech         |         68 | kavali           | testing  |
+| 102 | rajanna       |   9347207058 | raju83316@gmail.com         | degree        |         70 | kurnool          | aws      |
+| 106 | namalu        |   7093683426 | namalu@gmail.com            | btech         |         60 | thimmareddypalem | hardware |
+| 107 | manoj         |   7045683426 | manoj@gmail.com             | mca           |         70 | yarrareddypalem  | devops   |
+| 108 | madhan        |   6305683426 | madhan@gmail.com            | degree        |         75 | vengalapuram     | aws      |
+| 101 | koteswara rao |   9347207016 | koteswararao83316@gmail.com | degree        |         77 | ongole           | python   |
+| 104 | charan        |   9658741236 | maruthi@gmail.com           | mca           |         65 | hyderabad        | .net     |
+| 103 | bhanu         |   9347207890 | bhanu83316@gmail.com        | btech         |         90 | vijayawada       | java     |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+----------+
+4.is null,is not null commands
+--------------------------------
+* is null command is used where any column null values are present to get all record from the table
+* syntax:select*from <table-name> where <column-name> is null;
+* eg:select*from students where address is null;
+   Empty set (0.01 sec)
+   in my table address column no null values so no record is not came
+* is not null command is used column except null values ti get remaining data records
+* eg:select*from students where address is not null;
+mysql> select*from students where address is not null;
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+----------+
+| id  | name          | phone_number | email                       | qualification | percentage | address          | course   |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+----------+
+| 101 | koteswara rao |   9347207016 | koteswararao83316@gmail.com | degree        |         77 | ongole           | python   |
+| 102 | rajanna       |   9347207058 | raju83316@gmail.com         | degree        |         70 | kurnool          | aws      |
+| 103 | bhanu         |   9347207890 | bhanu83316@gmail.com        | btech         |         90 | vijayawada       | java     |
+| 104 | charan        |   9658741236 | maruthi@gmail.com           | mca           |         65 | hyderabad        | .net     |
+| 105 | siva          |  96564741236 | siva@gmail.com              | btech         |         68 | kavali           | testing  |
+| 106 | namalu        |   7093683426 | namalu@gmail.com            | btech         |         60 | thimmareddypalem | hardware |
+| 107 | manoj         |   7045683426 | manoj@gmail.com             | mca           |         70 | yarrareddypalem  | devops   |
+| 108 | madhan        |   6305683426 | madhan@gmail.com            | degree        |         75 | vengalapuram     | aws      |
+| 109 | upendra       |   9685683426 | upendra@gmail.com           | degree        |         73 | vishwanadhapuram | java     |
+| 110 | vinay         |   6582483426 | vinay@gmail.com             | btech         |         67 | dharakampadu     | os       |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+----------+
+5.limit command
+-----------------
+* limit command is used to get top records in table by given number
+* syntax:select*from <table-name> limit number;
+* eg:select*from students limit 4; 
++-----+---------------+--------------+-----------------------------+---------------+------------+------------+--------+
+| id  | name          | phone_number | email                       | qualification | percentage | address    | course |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------+--------+
+| 101 | koteswara rao |   9347207016 | koteswararao83316@gmail.com | degree        |         77 | ongole     | python |
+| 102 | rajanna       |   9347207058 | raju83316@gmail.com         | degree        |         70 | kurnool    | aws    |
+| 103 | bhanu         |   9347207890 | bhanu83316@gmail.com        | btech         |         90 | vijayawada | java   |
+| 104 | charan        |   9658741236 | maruthi@gmail.com           | mca           |         65 | hyderabad  | .net   |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------+--------+
+eg:select*from students order by name asc limit 4;
++-----+---------------+--------------+-----------------------------+---------------+------------+--------------+--------+
+| id  | name          | phone_number | email                       | qualification | percentage | address      | course |
++-----+---------------+--------------+-----------------------------+---------------+------------+--------------+--------+
+| 103 | bhanu         |   9347207890 | bhanu83316@gmail.com        | btech         |         90 | vijayawada   | java   |
+| 104 | charan        |   9658741236 | maruthi@gmail.com           | mca           |         65 | hyderabad    | .net   |
+| 101 | koteswara rao |   9347207016 | koteswararao83316@gmail.com | degree        |         77 | ongole       | python |
+| 108 | madhan        |   6305683426 | madhan@gmail.com            | degree        |         75 | vengalapuram | aws    |
++-----+---------------+--------------+-----------------------------+---------------+------------+--------------+--------+
+* eg:select*from students where percentage>75 limit 4;
++-----+---------------+--------------+-----------------------------+---------------+------------+------------+--------+
+| id  | name          | phone_number | email                       | qualification | percentage | address    | course |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------+--------+
+| 101 | koteswara rao |   9347207016 | koteswararao83316@gmail.com | degree        |         77 | ongole     | python |
+| 103 | bhanu         |   9347207890 | bhanu83316@gmail.com        | btech         |         90 | vijayawada | java   |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------+--------+
+6.min() and max()
+-------------------
+* min() is used to get minimum value in the column
+* max() is used to get maximum value in the column
+*syntax:select min(<column-name>)from <table-name>;
+* eg:select min(percentage) from students;
++-----------------+
+| min(percentage) |
++-----------------+
+|              60 |
++-----------------+
+*syntax:select max(<column_name>) from <table-name>;
+*eg:select max(percentage),name from students;
++-----------------+---------------+
+| max(percentage) | name          |
++-----------------+---------------+
+|              90 | koteswara rao |
++-----------------+---------------+
+7.count(),avg(),sum()
+----------------------
+* count() is used to count the records
+* syntax:select count(*) from <table-name>;
+* eg: select count(*) from students;
++----------+
+| count(*) |
++----------+
+|       10 |
++----------+
+* eg:select count(*) from students where percentage>80;
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+* similar avg() and sum()
+8.like operator
+----------------
+* The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
+* The percent sign (%) represents zero, one, or multiple characters
+* The underscore sign (_) represents one, single character
+*   a% ------>    if any value starts with 'a' we get that data
+*eg:select *from students where name like 'k%';
++-----+---------------+--------------+-----------------------------+---------------+------------+---------+--------+
+| id  | name          | phone_number | email                       | qualification | percentage | address | course |
++-----+---------------+--------------+-----------------------------+---------------+------------+---------+--------+
+| 101 | koteswara rao |   9347207016 | koteswararao83316@gmail.com | degree        |         77 | ongole  | python |
++-----+---------------+--------------+-----------------------------+---------------+------------+---------+--------+  
+*   %a ----->    if any value ends with 'a' we get that data
+mysql> select*from students where name like '%a';
++-----+---------+--------------+---------------------+---------------+------------+------------------+---------+
+| id  | name    | phone_number | email               | qualification | percentage | address          | course  |
++-----+---------+--------------+---------------------+---------------+------------+------------------+---------+
+| 102 | rajanna |   9347207058 | raju83316@gmail.com | degree        |         70 | kurnool          | aws     |
+| 105 | siva    |  96564741236 | siva@gmail.com      | btech         |         68 | kavali           | testing |
+| 109 | upendra |   9685683426 | upendra@gmail.com   | degree        |         73 | vishwanadhapuram | java    |
++-----+---------+--------------+---------------------+---------------+------------+------------------+---------+
+*    %ra% -------> if any value 'ra' in any position we get that data
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+--------+
+| id  | name          | phone_number | email                       | qualification | percentage | address          | course |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+--------+
+| 101 | koteswara rao |   9347207016 | koteswararao83316@gmail.com | degree        |         77 | ongole           | python |
+| 102 | rajanna       |   9347207058 | raju83316@gmail.com         | degree        |         70 | kurnool          | aws    |
+| 104 | charan        |   9658741236 | maruthi@gmail.com           | mca           |         65 | hyderabad        | .net   |
+| 109 | upendra       |   9685683426 | upendra@gmail.com           | degree        |         73 | vishwanadhapuram | java   |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+--------+
+*    '_a%' -------> if character 'a' in second position to get that data
+* eg:select*from students where name like '_a%';
++-----+---------+--------------+---------------------+---------------+------------+------------------+----------+
+| id  | name    | phone_number | email               | qualification | percentage | address          | course   |
++-----+---------+--------------+---------------------+---------------+------------+------------------+----------+
+| 102 | rajanna |   9347207058 | raju83316@gmail.com | degree        |         70 | kurnool          | aws      |
+| 106 | namalu  |   7093683426 | namalu@gmail.com    | btech         |         60 | thimmareddypalem | hardware |
+| 107 | manoj   |   7045683426 | manoj@gmail.com     | mca           |         70 | yarrareddypalem  | devops   |
+| 108 | madhan  |   6305683426 | madhan@gmail.com    | degree        |         75 | vengalapuram     | aws      |
++-----+---------+--------------+---------------------+---------------+------------+------------------+----------+
+*eg:select*from students where name like '__a%'; to get data where 'a' in 3rd position
++-----+--------+--------------+----------------------+---------------+------------+------------+--------+
+| id  | name   | phone_number | email                | qualification | percentage | address    | course |
++-----+--------+--------------+----------------------+---------------+------------+------------+--------+
+| 103 | bhanu  |   9347207890 | bhanu83316@gmail.com | btech         |         90 | vijayawada | java   |
+| 104 | charan |   9658741236 | maruthi@gmail.com    | mca           |         65 | hyderabad  | .net   |
++-----+--------+--------------+----------------------+---------------+------------+------------+--------+
+*   'a_%' ------> if any value starts with 'a' and length of the string atleast two characters to get that data only
+*  eg:select*from students where name like 'k_%';+-----+---------------+--------------+-----------------------------+---------------+------------+---------+--------+
+| id  | name          | phone_number | email                       | qualification | percentage | address | course |
++-----+---------------+--------------+-----------------------------+---------------+------------+---------+--------+
+| 101 | koteswara rao |   9347207016 | koteswararao83316@gmail.com | degree        |         77 | ongole  | python |
++-----+---------------+--------------+-----------------------------+---------------+------------+---------+--------+
+*  'a%o'-----------> if any value starta with 'a' and ends with 'o' we get that data only
+* eg:select*from students where phone_number like'9%6';
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+---------+
+| id  | name          | phone_number | email                       | qualification | percentage | address          | course  |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+---------+
+| 101 | koteswara rao |   9347207016 | koteswararao83316@gmail.com | degree        |         77 | ongole           | python  |
+| 104 | charan        |   9658741236 | maruthi@gmail.com           | mca           |         65 | hyderabad        | .net    |
+| 105 | siva          |  96564741236 | siva@gmail.com              | btech         |         68 | kavali           | testing |
+| 109 | upendra       |   9685683426 | upendra@gmail.com           | degree        |         73 | vishwanadhapuram | java    |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+---------+
+9.between
+-----------
+* The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates.
+* eg:select*from students where name between 'a' and 'l';
++-----+---------------+--------------+-----------------------------+---------------+------------+------------+--------+
+| id  | name          | phone_number | email                       | qualification | percentage | address    | course |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------+--------+
+| 101 | koteswara rao |   9347207016 | koteswararao83316@gmail.com | degree        |         77 | ongole     | python |
+| 103 | bhanu         |   9347207890 | bhanu83316@gmail.com        | btech         |         90 | vijayawada | java   |
+| 104 | charan        |   9658741236 | maruthi@gmail.com           | mca           |         65 | hyderabad  | .net   |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------+--------+
+* eg:select*from students where percentage between '70' and '90';
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+--------+
+| id  | name          | phone_number | email                       | qualification | percentage | address          | course |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+--------+
+| 101 | koteswara rao |   9347207016 | koteswararao83316@gmail.com | degree        |         77 | ongole           | python |
+| 102 | rajanna       |   9347207058 | raju83316@gmail.com         | degree        |         70 | kurnool          | aws    |
+| 103 | bhanu         |   9347207890 | bhanu83316@gmail.com        | btech         |         90 | vijayawada       | java   |
+| 107 | manoj         |   7045683426 | manoj@gmail.com             | mca           |         70 | yarrareddypalem  | devops |
+| 108 | madhan        |   6305683426 | madhan@gmail.com            | degree        |         75 | vengalapuram     | aws    |
+| 109 | upendra       |   9685683426 | upendra@gmail.com           | degree        |         73 | vishwanadhapuram | java   |
++-----+---------------+--------------+-----------------------------+---------------+------------+------------------+--------+
+10.case
+---------
+* case is similar like if else statement
+* eg: select name,percentage,case when percentage>85 then 'he focus on studies' when percentage=75 then 'he concntrate on girls' else 'he doesnot come to c
+ollege' end as quotation from students;
++---------------+------------+----------------------------+
+| name          | percentage | quotation                  |
++---------------+------------+----------------------------+
+| koteswara rao |         77 | he doesnot come to college |
+| rajanna       |         70 | he doesnot come to college |
+| bhanu         |         90 | he focus on studies        |
+| charan        |         65 | he doesnot come to college |
+| siva          |         68 | he doesnot come to college |
+| namalu        |         60 | he doesnot come to college |
+| manoj         |         70 | he doesnot come to college |
+| madhan        |         75 | he concntrate on girls     |
+| upendra       |         73 | he doesnot come to college |
+| vinay         |         67 | he doesnot come to college |
++---------------+------------+----------------------------+
+11.insert into select
+----------------------
+* insert into select statement is used to copy data from one table and inserts in another table
+* both columns have similar data types
+*eg: insert into kotesh (name) select name from students;s
+ select *from kotesh;
++---------------+
+| name          |
++---------------+
+| koteswara rao |
+| rajanna       |
+| bhanu         |
+| charan        |
+| siva          |
+| namalu        |
+| manoj         |
+| madhan        |
+| upendra       |
+| vinay         |
++---------------+
+12.having
+----------
+*having is similar to where
+sql practice
+----------------
+* students table
++-----+--------+-------+------+-------+---------------+------------+
+| sid | sname  | marks | age  | htown | qualification | percentage |
++-----+--------+-------+------+-------+---------------+------------+
+| 101 | sai    |   550 |   21 | hyd   | btech         |         92 |
+| 102 | nani   |   599 |   20 | hyd   | degree        |         99 |
+| 103 | satya  |   500 |   23 | bang  | degree        |         90 |
+| 104 | rajesh |   450 |   20 | pune  | btech         |         85 |
+| 105 | aakash |   490 |   22 | pune  | mca           |         78 |
+| 106 | kamal  |   300 |   22 | bang  | degree        |         50 |
++-----+--------+-------+------+-------+---------------+------------+
+* courses table
++------+--------+-------+-------+------+
+| cid  | cname  | fee   | iname | sno  |
++------+--------+-------+-------+------+
+| 1001 | python | 10000 | nth   |  102 |
+| 1002 | django |  5000 | abc   |  103 |
+| 1003 | ui     |  3000 | nth   |  101 |
+| 1004 | flask  |  5000 | nth   |  102 |
+| 1005 | java   | 15000 | abc   |  104 |
+| 1006 | devops | 10000 | xyz   |  105 |
++------+--------+-------+-------+------+
+* products table
++------+--------+-------+----------+------+
+| pid  | pname  | pcost | company  | cno  |
++------+--------+-------+----------+------+
+|    1 | lap    | 70000 | dell     |  103 |
+|    2 | comp   | 35000 | samsung  |  102 |
+|    3 | tab    | 20000 | samsung  |  101 |
+|    4 | mobile | 80000 | apple    |  104 |
+|    5 | pen    |   100 | reynolds |  102 |
++------+--------+-------+----------+------+
+1.waq td snames and their courses names?
+ select sname,cname from students inner join courses on students.sid=courses.sno;
++--------+--------+
+| sname  | cname  |
++--------+--------+
+| nani   | python |
+| satya  | django |
+| sai    | ui     |
+| nani   | flask  |
+| rajesh | java   |
+| aakash | devops |
++--------+--------+
+2.waqtd sname who got highest marks?
+select sname,max(marks) from students;
++-------+------------+
+| sname | max(marks) |
++-------+------------+
+| sai   |        599 |
++-------+------------+
+3.waqtd sname and age?
+
+mysql> select sname,age from students;
++--------+------+
+| sname  | age  |
++--------+------+
+| sai    |   21 |
+| nani   |   20 |
+| satya  |   23 |
+| rajesh |   20 |
+| aakash |   22 |
+| kamal  |   22 |
++--------+------+
+4.waqtd sname,age who completed btech?
+ select sname,age from students where qualification='btech';
++--------+------+
+| sname  | age  |
++--------+------+
+| sai    |   21 |
+| rajesh |   20 |
++--------+------+
+4.waqtd sname,qualification who got least percentage?
+
+mysql> select sname,qualification,min(percentage) from students;
++-------+---------------+-----------------+
+| sname | qualification | min(percentage) |
++-------+---------------+-----------------+
+| sai   | btech         |              50 |
++-------+---------------+-----------------+
+5.waqtd qualification of satya?
+ select qualification from students where sname='satya';
++---------------+
+| qualification |
++---------------+
+| degree        |
++---------------+
+6.waqtd snames who are not from pune?
+
+mysql> select sname from students where not htown='pune';
++-------+
+| sname |
++-------+
+| sai   |
+| nani  |
+| satya |
+| kamal |
++-------+
+7.waqtd the total count of students who are done degree?
+
+mysql> select count(*)from students where qualification='degree';
++----------+
+| count(*) |
++----------+
+|        3 |
++----------+
+8.waqtd snames whoose percentage between60 and 90?
+mysql> select sname from students where percentage between 60 and 90;
++--------+
+| sname  |
++--------+
+| satya  |
+| rajesh |
+| aakash |
++--------+
+9.waqtd the snames who are not learning any course?
+ select sname from students where sid not in(select sno from courses);
++-------+
+| sname |
++-------+
+| kamal |
++-------+
+10.waqtd the snames who are not learning in python?
+ select sname from students where sid in(select sno from courses where not qualification='python');
++--------+
+| sname  |
++--------+
+| sai    |
+| nani   |
+| satya  |
+| rajesh |
+| aakash |
++--------+
+11.waqtd the sname and cname who is spending more amount to learn the course?
+select students.sname,courses.cname from students inner join courses on students.sid = courses.sno where sid =(select sno from courses where fee in(select max(fee) from courses));
++--------+-------+
+| sname  | cname |
++--------+-------+
+| rajesh | java  |
++--------+-------+
+12.waqtd sname,cname and age who are studying in nth institute?
+ select sname,age,cname from students inner join courses on students.sid=courses.sno where sid in(select sno from courses where iname='nth');
++-------+------+--------+
+| sname | age  | cname  |
++-------+------+--------+
+| nani  |   20 | python |
+| sai   |   21 | ui     |
+| nani  |   20 | flask  |
++-------+------+--------+
+13.waqtd who are learning courses?
+
+mysql> select sname from students where sid in(select sno from courses);
++--------+
+| sname  |
++--------+
+| sai    |
+| nani   |
+| satya  |
+| rajesh |
+| aakash |
++--------+
+assignment 2
+--------------------
++----------+-------------+--------------+--------------+------+
+| actor_id | actor_names | total_movies | remuneration | age  |
++----------+-------------+--------------+--------------+------+
+|        1 | rajani      |          100 |          125 |   70 |
+|        2 | kamal       |          110 |          100 |   68 |
+|        3 | surya       |           30 |           75 |   45 |
+|        4 | chiru       |          150 |           50 |   65 |
+|        5 | balaiah     |          140 |           40 |   60 |
+|        6 | sampu       |            5 |            3 |   40 |
++----------+-------------+--------------+--------------+------+
++-------------+---------------+--------------+--------------+------+
+| director_id | director_name | total_movies | success_rate | aid  |
++-------------+---------------+--------------+--------------+------+
+|          11 | raja mouli    |           20 |          100 |    1 |
+|          12 | puri          |           30 |           80 |    2 |
+|          13 | trivikram     |           30 |           90 |    6 |
+|          14 | anil          |           10 |           70 |    3 |
+|          15 | sukumar       |           10 |           60 |    5 |
+|          16 | koti          |            0 |          100 | NULL |
++-------------+---------------+--------------+--------------+------+
++------------+---------------+--------------+--------------+------+------+
+| actress_id | actress_name  | total_movies | remuneration | aid  | did  |
++------------+---------------+--------------+--------------+------+------+
+|        101 | samantha      |           30 |           30 |    3 |   12 |
+|        102 | kajal         |           40 |           30 |    4 |   11 |
+|        103 | krithi shetty |           10 |           12 |    3 |   14 |
+|        104 | alia          |           20 |           30 |    5 |   12 |
+|        105 | anushka       |           40 |           20 |    6 |   11 |
++------------+---------------+--------------+--------------+------+------+
++-------------+---------------+--------+---------------+------+
+| producer_id | producer_name | budget | banner_name   | did  |
++-------------+---------------+--------+---------------+------+
+|        1001 | aravindh      |    150 | aha           |   11 |
+|        1002 | narayana      |    200 | nth           |   12 |
+|        1003 | raju          |    300 | raju arts     |   13 |
+|        1004 | sai           |     10 | sai creations |   15 |
++-------------+---------------+--------+---------------+------+
+1. Write a query to display actor name who is directed by Puri?
+select actor_names from actors where actor_id in(select aid from directors where director_name='puri');
++-------------+
+| actor_names |
++-------------+
+| kamal       |
++-------------+
+or
+-----
+ select actor_names from actors where actor_id=(select aid from directors where
+director_name='puri');
++-------------+
+| actor_names |
++-------------+
+| kamal       |
++-------------+
+2. Write a query to display actor name who is directed by less successful director?
+ select actor_names from actors where actor_id=(select aid from directors where
+success_rate=(select min(success_rate) from directors));
++-------------+
+| actor_names |
++-------------+
+| balaiah     |
++-------------+
+3. Write a query to display director name of actor Surya?
+select director_name from directors where aid=(select actor_id from actors where actor_names='surya');
++---------------+
+| director_name |
++---------------+
+| anil          |
++---------------+
+
+4. Write a query to display director name who directed the actor who has acted in less movies?
+
+ select director_name from directors where aid =(select actor_id from actors whe
+re total_movies=(select min(total_movies) from actors));
++---------------+
+| director_name |
++---------------+
+| trivikram     |
++---------------+
+5. Write a query to display director names of actors Kamal, Balaiah and Sampu?
+
+ select director_name from directors where aid in(select actor_id from actors where actor_names in('kamal','balaiah','sampu'));
++---------------+
+| director_name |
++---------------+
+| puri          |
+| trivikram     |
+| sukumar       |
++---------------+
+6. Write a query to display actor name who is acted with Samantha?
+ select actor_names from actors where actor_id=(select aid from actress where ac
+tress_name='samantha');
++-------------+
+| actor_names |
++-------------+
+| surya       |
++-------------+
+
+
+7. Write a query to display actress names who acted with Surya?
+ select actress_name from actress where aid=(select actor_id from actors where a
+ctor_names='surya');
++---------------+
+| actress_name  |
++---------------+
+| samantha      |
+| krithi shetty |
++---------------+
+
+8. Write a query to display actors names and their directors names?
+
+mysql> select actor_names,director_name from actors inner join directors on actors.act
+or_id=directors.aid;
++-------------+---------------+
+| actor_names | director_name |
++-------------+---------------+
+| rajani      | raja mouli    |
+| kamal       | puri          |
+| sampu       | trivikram     |
+| surya       | anil          |
+| balaiah     | sukumar       |
++-------------+---------------+
+
+
+
+9. Write a query to display actors names and their heroines names?
+ select actor_names,actress_name from actors inner join actress on actors.actor_id=actress.aid;
++-------------+---------------+
+| actor_names | actress_name  |
++-------------+---------------+
+| surya       | samantha      |
+| chiru       | kajal         |
+| surya       | krithi shetty |
+| balaiah     | alia          |
+| sampu       | anushka       |
++-------------+---------------+
+
+10. Write a query to display actors names, heroines names and directors names who worked
+altogether?
+ select actor_names,actress_name,director_name from actors inner join actress on
+ actors.actor_id=actress.aid inner join directors on actors.actor_id=directors.aid;
++-------------+---------------+---------------+
+| actor_names | actress_name  | director_name |
++-------------+---------------+---------------+
+| sampu       | anushka       | trivikram     |
+| surya       | samantha      | anil          |
+| surya       | krithi shetty | anil          |
+| balaiah     | alia          | sukumar       |
++-------------+---------------+---------------+
+11. Write a query to display the actress names who is directed by highly successful director?
+ select actress_name from actress where did in(select director_id from directors
+ where success_rate in(select max(success_rate) from directors));
++--------------+
+| actress_name |
++--------------+
+sel| kajal        |
+| anushka      |
++--------------+
+
+12. Write a query to display the actor name whose remuneration is greater then the total
+remuneration of all heroines?
+ select actor_names from actors where remuneration>(select sum(remuneration) fro
+m actress);
++-------------+
+| actor_names |
++-------------+
+| rajani      |
++-------------+
+
+13. Write a query to display the actors who worked under NTH banner?
+
+
+mysql> select actor_names from actors where actor_id in(select aid from directors wher
+e director_id in(select did from producers where banner_name='nth'));
++-------------+
+| actor_names |
++-------------+
+| kamal       |
++-------------+
+14. Write a query to display the actors names, heroines names, directors names and producers
+names?
+select actor_names,director_name,actress_name,producer_name from actors left join directors on actors.actor_id=directors.aid left join actress on actors.actor_id=actress.aid left join producers on directors.director_id=producers.did;
++-------------+---------------+---------------+---------------+
+| actor_names | director_name | actress_name  | producer_name |
++-------------+---------------+---------------+---------------+
+| rajani      | raja mouli    | NULL          | aravindh      |
+| kamal       | puri          | NULL          | narayana      |
+| surya       | anil          | samantha      | NULL          |
+| surya       | anil          | krithi shetty | NULL          |
+| chiru       | NULL          | kajal         | NULL          |
+| balaiah     | sukumar       | alia          | sai           |
+| sampu       | trivikram     | anushka       | raju          |
++-------------+---------------+---------------+---------------+
+15. Write a query to display the directors names and heroines names who worked under Sai creations?
+
+ select director_name,actress_name from directors inner join actress on directors.aid=actress.aid where director_id in(select did from producers where banner_name='sa
+i creations');
++---------------+--------------+
+| director_name | actress_name |
++---------------+--------------+
+| sukumar       | alia         |
++---------------+--------------+
+
+

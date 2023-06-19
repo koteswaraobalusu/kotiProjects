@@ -1,0 +1,321 @@
+'''#1 wap to fetch all data from the file?
+x=open('assign10.txt','r').read()
+print(x)  #read data in string format
+# or
+x=open('assign10.txt','r').readlines()
+print(x) # read data in list format
+# 2 wap to read first line from the file?
+x=open('assign10.txt','r').readline()
+print(x)
+#3wap to read last line from the file?
+x=open('assign10.txt','r').readlines()
+print(x[-1])
+#4 wap to read third line from the file?
+x=open('assign10.txt','r').readlines()
+print(x[2])
+#5 wap to count total number of characters in the file?
+x=open('assign10.txt','r').read()
+print(len(x))# including space
+#6 wap to count total number of commas in the file?
+x=open('assign10.txt','r').read()
+print(x.count(','))
+# 7wap to count total no.of words in the file?
+x=open('assign10.txt','r').read().replace('\n',',').split(',')
+print(len(x))
+#8 wap to count total number of lines in the files?
+x=open('assign10.txt','r').readlines()
+print(len(x))
+#9 wap to count total number of 'Sai' in the file?
+x=open('assign10.txt','r').read().replace('\n',',').split(',')
+print(x.count('Sai'))
+#10 wap to fetch the first word from each line?
+print([i.split(',')[0] for i in open('assign10.txt','r').read().split('\n')])
+#11  wap to fetch the last word from each line?
+print([i.split(',')[-1] for i in open('assign10.txt','r').read().split('\n')])
+#12 wap to fetch all words starts withn'a'in the file?
+print([i for i in open('assign10.txt','r').read().replace('\n',',').split(',') if i[0] in 'aA'])
+
+#13 wap to fetch all words ends withan vowelin the file?
+print([i for i in open('assign10.txt','r').read().replace('\n',',').split(',') if i[-1] in 'AEIOUaeiou'])
+#14 wap to fetch all words WHICH HAS EITHER 'a OR I'in the file?
+x=[i for i in open('assign10.txt','r').read().replace('\n',',').split(',')] 
+for i in x:
+    for j in i:
+        if j in 'AaIi':
+            print(i,end=',')
+#15 wap to fetch all words which has 5 characters in the file?
+print(set([i for i in open('assign10.txt','r').read().replace('\n',',').split(',') if len(i)==5]))# without duplicates
+#16 wap to fetch all words which does not contain vowels except i in the file?
+lst=[]
+for i in open('assign10.txt','r').read().replace('\n',',').split(','):
+    for j in i:
+        if  j not in 'AaeEOoUu':
+            lst.append(i)
+print(set(lst))
+#17 wap to fetch all words ends with uppercase in the file?
+print([i for i in open('assign10.txt','r').read().replace('\n',',').split(',') if i[-1].isupper()])
+#18 write a program to count total number of characters excluding \n,',' in the file?
+x=open('assign10.txt','r').read().replace('\n','').replace(',','')
+print(len(x))
+#19 wap to count total number of words in the file?
+print(len([i for i in open('assign10.txt','r').read().replace('\n',',').split(',')]))
+#20  wap tf all even words from the file?
+x=open('assign10.txt','r').read().replace('\n',',').split(',')
+for i in x:
+    if x.index(i)%2==0:
+          print(i,end=',')
+          
+#21 ends with bha
+x=open('assign10.txt','r').read().replace('\n',',').split(',')
+for i in x:
+    if i.endswith('bha'):
+          print(i,end=',')
+#22 to display all tcs employees?
+x=open('assign10.txt','r').readlines()
+for i in x:
+    if 'TCS' in i:
+          print(i.split(',')[1:])
+#23 to display company name of chinna?
+x=open('assign10.txt','r').readlines()
+for i in x:
+    if 'Chinna' in i:
+          print(i.split(',')[0])
+#24 to fetch 2nd and 3rd line ?
+x=open('assign10.txt','r').readlines()
+print(x[1])
+print(x[2])'''
+#25 to fetch 1st character from each word of 3rd line?
+x=open('assign10.txt','r').readlines()
+for i in x:
+    if x.index(i)==2:
+        j=i.split(',')
+        for k in j:
+            print(k[0],end=' ')
+#26 to fetch first and last character in the every eord in last line?
+x=open('assign10.txt','r').readlines()
+for i in x[-1].split(','):
+    print(i[0]+i[-1])
+#27  to does not fetch last character and first character in the every eord in last line?
+x=open('assign10.txt','r').readlines()
+for i in x[-1].split(','):
+    print(i[1:-1],end=',')
+#28 to count total no.of wordswhich strts with's'?
+for i in open('assign10.txt','r').read().replace('\n',',').split(','):
+    if i[0] in 'Ss':
+        print(i,end=',')
+#29 write a program to fetch all duplicatesnnames in the file?
+lst=[]
+x=open('assign10.txt','r').read().replace('\n',',').split(',')
+for i in x:
+    if x.count(i)>=2:
+        print(i,end=',')
+#30 to count all vowels in the file?
+x=open('assign10.txt','r').read().replace('\n','')
+vowels='aeiouAEIOU'
+d={}.fromkeys(vowels,0)
+for i in x:
+    if i in d:
+        d[i]=d[i]+1
+print(sum(d.values()))
+#31 to reverse all words in the file
+for i in open('assign10.txt','r').read().replace('\n',',').split(','):
+    print(i[-1::-1],end=',')
+'''1. Write a program to fetch all data from the file.
+2. Write a program to read the first line from the file.
+3. Write a program to read the last line from the file.
+4. Write a program to read the 3rd line from file
+5. Write a program to count total number of characters in the file?
+6. Write a program to count total number of commas in the file?
+7. Write a program to count total number of words in the first line?
+8. Write a program to count total number of lines in the file?
+9. Write a program to count total number of 'Sai' name in the file?
+10. Write a program to fetch the first word from each line in the file?
+11. Write a program to fetch the last word from each line?
+12. Write a program to fetch all words which starts with 'a' Character?
+13. Write a program to fetch all words which ends with an vowel?
+14. Write a program to fetch all words which has either 'a' or 'i' characters in the file?
+15. Write a program to fetch all words which contains only 5 characters in the file?
+16. Write a program to fetch all words which does not contains vowels except i in the file?
+17. Write a program to fetch all words which ends with uppercase character in the file?
+18. Write a program to count total number of characters in the file excluding commas and \ns?
+Python Programs Assignment - 10
+
+nthdata.txt
+
++91-9010607010 www.narayanatechhouse.com
+19. Write a program to count total number of words in the entire file?
+20. Write a program to fetch all even number words from from every line the file?
+21. Write a program to fetch all words which ends with 'bha' in the file?
+22. Write a program to display all TCS employees?
+23. Write a program to display the company name of Chinna Employee?
+24. Write a program to fetch the 2nd from 3rd line in the file?
+25. Write a program to fetch the first character from each word in the 3rd line?
+26. Write a program to fetch first and last character of each word in the last line?
+27. Write a program to fetch all characters(except 1st and last chars) of each word in the 2nd line?
+28. Write a program to count total number of words which starts with 'S' character?
+29. Write a program to fetch all duplicate names in the file?
+30. Write a program to count all vowels in the file? (Note: output must be in dict)
+31. Write a program to reverse all words in the file?'''
+#32. Write a program to fetch all words which contains two or more then 'a' characters?
+for i in open('assign10.txt','r').read().replace('\n',',').split(','):
+    if i.count('a')>=2:
+        print(i,end=',')
+
+#33. Write a program to fetch all words which starts and ends with 'a' character?
+for i in open('assign10.txt','r').read().replace('\n',',').split(','):
+    if i[0] in 'Ss' and i[-1] in 'Ss':
+        print(i)
+#34. Write a program to fetch word which has more number of 'a' characters?
+lst=[]
+for i in open('assign10.txt','r').read().replace('\n',',').split(','):
+    for j in i:
+        if j in 'a':
+            lst.append(i)
+k=list(set(lst))
+lst1=[]
+for i in k:
+    lst1.append(i.count('a'))
+for i in k:
+    if i.count('a')==max(lst1):
+        print(i)
+      
+#35. Write a program to fetch all company names which starts with vowel?
+for i in open('assign10.txt','r').read().split('\n'):
+    if i.split(',')[0][0] in 'AEIOUaeiou':
+        print(i.split(',')[0])
+        
+    
+        
+    
+#36. Write a program to display company name which contains Saroj Employee?
+for  i in open('assign10.txt','r').read().split('\n'):
+     for  j in i.split(','):
+          if j=='Saroj':
+              print(i.split(',')[0])
+
+#37. Write a program to count all words which starts and ends with consonants?
+lst=[]
+for i in open('assign10.txt','r').read().replace('\n',',').split(','):
+    if i[0] not in 'AEIOUaeiou' and i[-1] not in 'AEIOUaeiou':
+        lst.append(i)
+print(len(lst))
+
+#38. Write a program to fetch all company names which does not contain Venkat employee?
+for i in open('assign10.txt','r').read().split('\n'):
+    if 'Venkat' not in i:
+        print(i.split(',')[0])
+    
+#39. Write a program to display company name where Narayana is working?
+for i in open('assign10.txt','r').read().split('\n'):
+    if 'Narayana'  in i:
+        print(i.split(',')[0])
+
+#40. Write a program to display the first word and last word from each line in dict format?
+lst=[]
+for i in open('assign10.txt','r').read().split('\n'):
+    lst.append(i.split(',')[0])
+    lst.append(i.split(',')[-1])
+d={}.fromkeys(lst)
+print(d)
+#41. Write a program to fetch all names whose name starts with 'a' in NTH company?
+for i in open('assign10.txt','r').read().split('\n'):
+    if 'NTH' in i:
+        for j in i.split(','):
+            if j[0] in 'aA':
+                print(j)
+#42. Write a program to count total number of employees in CTS company?
+lst=[]
+for i in open('assign10.txt','r').read().split('\n'):
+    if 'CTS' in i:
+         for j in i.split(',')[1:]:
+            lst.append(j)
+print(len(lst))
+        
+#43. Write a program to fetch all companies where Venkat
+for i in open('assign10.txt','r').read().split('\n'):
+    if 'Venkat' in i:
+        print(i.split(',')[0])
+#44. Write a program to fetch all companies names which name starts with Vowel?
+for i in open('assign10.txt','r').read().split('\n'):
+    if i.split(',')[0][0] in 'AEIOUaeiou':
+            print(i.split(',')[0])
+#45. Write a program to fetch all palindrome names from the file?
+for i in open('assign10.txt','r').read().replace('\n',',').split(','):
+    if i==i[-1::-1]:
+        print(i)
+#46. Write a program to fetch all companies names where palindrome named employees working?
+for i in open('assign10.txt','r').read().replace('\n',',').split(','):
+    if i==i[-1::-1]:
+        j=i
+for i in open('assign10.txt','r').read().split('\n'):
+    if j in i:
+        print(i.split(',')[0])
+
+#47. Write a program to fetch the lengthiest company name?
+lst=[]
+for i in open('assign10.txt','r').read().split('\n'):
+        lst.append(len(i.split(',')[0]))
+for i in open('assign10.txt','r').read().split('\n'):
+    if len(i.split(',')[0])==max(lst):
+        print(i.split(',')[0])
+        
+        
+#48. Write a program to fetch the lengthiest employee name in ABC company?
+lst=[]
+for i in open('assign10.txt','r').read().split('\n'):
+    if 'ABC' in i:
+        for j in i.split(',')[1:]:
+            lst.append(len(j))
+for i in open('assign10.txt','r').read().split('\n'):
+    if 'ABC' in i:
+        for j in i.split(',')[1:]:
+            if len(j)==max(lst):
+                print(j)
+        
+        
+#49. Write a program to fetch shortest employee name in the WIPRO company?
+lst=[]
+for i in open('assign10.txt','r').read().split('\n'):
+    if 'WIPRO' in i:
+        for j in i.split(',')[1:]:
+            lst.append(len(j))
+for i in open('assign10.txt','r').read().split('\n'):
+    if 'WIPRO' in i:
+        for j in i.split(',')[1:]:
+            if len(j)==min(lst):
+                print(j)
+        
+                
+#50. Write a program count total number of employees in each company(in dict format)
+lst=[]
+for i in open('assign10.txt','r').read().split('\n'):
+    lst.append(i.split(',')[0])
+d={}.fromkeys(lst,0)
+print(d)
+for i in open('assign10.txt','r').read().split('\n'):
+    if i.split(',')[0] in d:
+        d[i.split(',')[0]]=len(i.split(',')[1:])
+print(d)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
